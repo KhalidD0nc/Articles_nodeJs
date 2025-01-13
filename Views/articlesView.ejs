@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Articles Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #f9f9f9, #e8e8e8);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .article {
+      border-bottom: 1px solid #ddd;
+      padding: 20px 0;
+    }
+
+    .article:last-child {
+      border-bottom: none;
+    }
+
+    .article-title {
+      font-size: 1.5em;
+      color: #2a4d69;
+      margin: 0 0 10px;
+    }
+
+    .article-body {
+      font-size: 1em;
+      margin: 0 0 10px;
+    }
+
+    .article-date {
+      font-size: 0.9em;
+      color: #777;
+      margin-top: 10px;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: #2a4d69;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      font-size: 1em;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:hover {
+      background-color: #376996;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <% articles.forEach(function(article) { %>
+      <div class="article">
+        <h2 class="article-title"><%= article.title %></h2>
+        <p class="article-body"><%= article.body %></p>
+        <p class="article-date">Posted on: <%= new Date(article.postDate).toLocaleDateString() %></p>
+      </div>
+    <% }); %>
+
+    <a href="#" class="button">Load More Articles</a>
+  </div>
+</body>
+</html>
